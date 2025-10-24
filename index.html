@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justice Archive BD</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -40,45 +42,66 @@
     <!-- Main Content -->
     <div id="main-content" class="hidden">
         <!-- Header -->
-        <header>
-            <div class="container">
-                <h1><a href="#"><i class="fas fa-gavel logo-icon"></i> Justice Archive BD</a></h1>
-                <div class="stats">
-                    <span><i class="fas fa-chart-bar"></i> Total Incidents: <span id="total-incidents">0</span></span>
-                    <span><i class="fas fa-users"></i> Visitors: <span id="total-visitors">0</span></span>
-                </div>
-            </div>
-        </header>
+       <header>
+    <div class="container">
+        <h1><a href="#"><i class="fas fa-gavel logo-icon"></i> Justice Archive BD</a></h1>
+        <div class="stats">
+            <span><i class="fas fa-chart-bar"></i> Total Incidents: <span id="total-incidents">0</span></span>
+            <span><i class="fas fa-users"></i> Visitors: <span id="total-visitors">0</span></span>
+            <span id="saved-cases-toggle" style="cursor: pointer;">
+                <i class="fas fa-bookmark"></i> Saved Cases: <span id="saved-count">0</span>
+            </span>
+        </div>
+    </div>
+</header>
 
         <!-- Search and Filter Section -->
-        <section class="search-filters">
-            <div class="container">
-                <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="Search by title, subject, or keywords...">
-                    <button id="search-btn"><i class="fas fa-search"></i> Search</button>
-                </div>
-                <div class="filters">
-                    <select id="crime-type-filter">
-                        <option value="">All Crime Types</option>
-                    </select>
-                    <select id="district-filter">
-                        <option value="">All Districts</option>
-                    </select>
-                    <select id="status-filter">
-                        <option value="">All Statuses</option>
-                        <option value="reported">Reported</option>
-                        <option value="charged">Charged</option>
-                        <option value="under_trial">Under Trial</option>
-                        <option value="convicted">Convicted</option>
-                        <option value="acquitted">Acquitted</option>
-                        <option value="appeal">Appeal</option>
-                    </select>
-                    <input type="date" id="date-from-filter" placeholder="From Date">
-                    <input type="date" id="date-to-filter" placeholder="To Date">
-                    <button id="clear-filters"><i class="fas fa-times"></i> Clear Filters</button>
-                </div>
-            </div>
-        </section>
+    <section class="search-filters">
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search by title, subject, or keywords...">
+            <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+            <button id="filter-toggle-btn" class="filter-toggle-btn"><i class="fas fa-filter"></i> Show Filters</button>
+        </div>
+        <div class="filters hidden">
+            <!-- Your existing filter elements remain the same -->
+            <select id="crime-type-filter">
+                <option value="">All Crime Types</option>
+            </select>
+            <select id="district-filter">
+                <option value="">All Districts</option>
+            </select>
+            <select id="status-filter">
+                <option value="">All Statuses</option>
+                <option value="reported">Reported</option>
+                <option value="charged">Charged</option>
+                <option value="under_trial">Under Trial</option>
+                <option value="convicted">Convicted</option>
+                <option value="acquitted">Acquitted</option>
+                <option value="appeal">Appeal</option>
+            </select>
+            <select id="year-filter">
+    <option value="">All Years</option>
+</select>
+<select id="month-filter">
+    <option value="">All Months</option>
+    <option value="01">January</option>
+    <option value="02">February</option>
+    <option value="03">March</option>
+    <option value="04">April</option>
+    <option value="05">May</option>
+    <option value="06">June</option>
+    <option value="07">July</option>
+    <option value="08">August</option>
+    <option value="09">September</option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+</select>
+            <button id="clear-filters"><i class="fas fa-times"></i> Clear Filters</button>
+        </div>
+    </div>
+</section>
 
         <!-- Criminal Cards Section -->
         <section class="criminal-cards">
