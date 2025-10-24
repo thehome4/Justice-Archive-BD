@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice Archive BD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Indicator -->
+    <div id="loading-indicator">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading Justice Archive Data...</div>
+    </div>
+
+    <!-- Warning Modal -->
+    <div id="warning-modal" class="modal">
+        <div class="modal-content">
+            <h2><i class="fas fa-exclamation-triangle"></i> Content Warning</h2>
+            <p>This website contains graphic details about violent crimes including murder and sexual violence. The content may be disturbing and is intended for informational purposes only.</p>
+            <p>By proceeding, you acknowledge that you understand the sensitive nature of this content.</p>
+            <div class="modal-buttons">
+                <button id="accept-warning"><i class="fas fa-check-circle"></i> I Understand & Proceed</button>
+                <button id="leave-site"><i class="fas fa-times-circle"></i> Leave Site</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Detail Modal -->
+    <div id="detail-modal" class="modal hidden">
+        <div class="modal-content detail-modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="detail-content">
+                <!-- Detail content will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="hidden">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <h1><a href="#"><i class="fas fa-gavel logo-icon"></i> Justice Archive BD</a></h1>
+                <div class="stats">
+                    <span><i class="fas fa-chart-bar"></i> Total Incidents: <span id="total-incidents">0</span></span>
+                    <span><i class="fas fa-users"></i> Visitors: <span id="total-visitors">0</span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search and Filter Section -->
+        <section class="search-filters">
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search by title, subject, or keywords...">
+                    <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div class="filters">
+                    <select id="crime-type-filter">
+                        <option value="">All Crime Types</option>
+                    </select>
+                    <select id="district-filter">
+                        <option value="">All Districts</option>
+                    </select>
+                    <select id="status-filter">
+                        <option value="">All Statuses</option>
+                        <option value="reported">Reported</option>
+                        <option value="charged">Charged</option>
+                        <option value="under_trial">Under Trial</option>
+                        <option value="convicted">Convicted</option>
+                        <option value="acquitted">Acquitted</option>
+                        <option value="appeal">Appeal</option>
+                    </select>
+                    <input type="date" id="date-from-filter" placeholder="From Date">
+                    <input type="date" id="date-to-filter" placeholder="To Date">
+                    <button id="clear-filters"><i class="fas fa-times"></i> Clear Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Criminal Cards Section -->
+        <section class="criminal-cards">
+            <div class="container">
+                <div id="cards-container" class="cards-grid">
+                    <!-- Cards will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <p>Justice Archive BD - Documenting severe criminal cases in Bangladesh</p>
+                <p>Data sourced from verified public records and media reports</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                    <a href="#"><i class="fas fa-file-contract"></i> Terms of Use</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+                </div>
+                <p>&copy; 2025 Justice Archive BD. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
