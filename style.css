@@ -751,3 +751,131 @@
             color: #dee2e6;
         }
 
+
+        .filter-toggle-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #6c757d, #5a6268);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    margin-left: 15px;
+}
+
+.filter-toggle-btn:hover {
+    background: linear-gradient(135deg, #5a6268, #6c757d);
+    transform: translateY(-2px);
+}
+
+/* Saved Cases Styles */
+#saved-cases-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+#saved-cases-toggle:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Download Button Styles */
+.download-btn {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #20c997, #28a745);
+}
+
+/* Saved Cases View */
+.saved-view-indicator {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border: 2px solid #ffc107;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    color: #856404;
+}
+
+.saved-view-indicator h3 {
+    color: #856404;
+    margin-bottom: 10px;
+}
+
+#exit-saved-view {
+    background: linear-gradient(135deg, #6c757d, #5a6268);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+#exit-saved-view:hover {
+    background: linear-gradient(135deg, #5a6268, #6c757d);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Card Actions */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e9ecef;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+    padding: 8px 15px;
+    border-radius: 6px;
+}
+
+.action-btn:hover {
+    color: var(--primary-color);
+    background-color: #f8f9fa;
+}
+
+.save-btn.saved {
+    color: var(--accent-color);
+    background-color: rgba(212, 175, 55, 0.1);
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #20c997, #28a745);
+    transform: translateY(-2px);
+}
